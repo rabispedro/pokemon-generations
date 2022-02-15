@@ -1,0 +1,19 @@
+footer {
+	width: 100%;
+	min-height: 4rem;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	position: absolute;
+	bottom: 0;
+	
+	background-color: var(--black);
+	border-top: 4px solid var(--blue);
+}
+
+p {
+	font-size: 14px;
+	color: var(--yellow);
+}
