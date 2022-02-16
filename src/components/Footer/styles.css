@@ -14,7 +14,7 @@ footer {
 	border-top: 4px solid var(--blue);
 }
 
-p {
+#program-creators {
 	font-size: 14px;
 	color: var(--yellow);
 }

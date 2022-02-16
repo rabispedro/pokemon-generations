@@ -4,7 +4,7 @@ const Footer: React.FC = () => {
 	return (
 		<>
 			<footer>
-				<p>Desenvolvido por Carlito Alves, Gustavo Spindola e Pedro Rabis</p>
+				<p id='program-creators' >Desenvolvido por Carlito Alves, Gustavo Spindola e Pedro Rabis</p>
 			</footer>
 		</>
 	);
