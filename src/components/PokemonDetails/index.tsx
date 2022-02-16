@@ -1,10 +1,6 @@
-import { useState } from 'react';
 import './styles.css'
-import Api from 'services/Api/index';
+// import Api from 'services/Api/index';
 
-interface PokemonDetailsProps {
-	pokemonId: number;
-}
 
 const PokemonDetails: React.FC = () => {
 	const detail = 'Pokémon are the creatures that inhabit the world of the Pokémon games. They can be caught using Pokéballs and trained by battling with other Pokémon. Each Pokémon belongs to a specific species but may take on a variant which makes it differ from other Pokémon of the same species, such as base stats, available abilities and typings.';
@@ -296,27 +292,43 @@ const PokemonDetails: React.FC = () => {
 		<>
 			<div className='pokemon-details-container'>
 				
-				<img src={pokemon.sprites.front_default} alt={`${pokemon.name} image`} />
+				<img src={pokemon.sprites.versions['generation-v']['black-white'].animated.front_default} alt={`${pokemon.name} image`} />
 
 				<div className='pokemon-id-container'>
-					<h2># {pokemon.id}</h2>
+					<h2>#{pokemon.id}</h2>
 					<h1>{pokemon.name}</h1>
 				</div>
 
-				<h3>Types:</h3>
-				<div className='pokemon-types-container'>
-					<p>{pokemon.types.map(type => type.type.name)}</p>
+				<div className='types-container'>
+					<h2>Types:</h2>
+						{pokemon.types.map(type => {
+							return (
+								<div className='pokemon-types-container'>
+									<p>{type.type.name}</p>
+								</div>
+							);
+						})}
 				</div>
 
-				<h3>Abilities:</h3>
-				<div className='pokemon-abilities-container'>
-					<p>{pokemon.abilities.map(ability => ability.ability.name)}</p>
+				<div className='abilities-container'>
+					<h2>Abilities:</h2>
+						{pokemon.abilities.map(ability => {
+							return (
+								<div className='pokemon-abilities-container'>
+									<p>{ability.ability.name}</p>
+								</div>
+							);
+						})}
 				</div>
 
 				<h3>Moves:</h3>
-				<div className='pokemon-abilities-container'>
-					<p>{pokemon.moves.map(move => move.move.name)}</p>
-				</div>
+					{pokemon.moves.map(move => {
+						return (
+							<div className='pokemon-moves-container'>
+								<p>{move.move.name}</p>
+							</div>
+						);
+					})}
 
 				<div className='pokemon-informations-container'>
 					<h2>Height:</h2>
@@ -328,7 +340,6 @@ const PokemonDetails: React.FC = () => {
 					<h2>Base XP:</h2>
 					<h2>{pokemon.base_experience}</h2>
 				</div>
-
 
 			</div>
 		</>
