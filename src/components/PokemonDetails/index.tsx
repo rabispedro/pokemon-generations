@@ -44,13 +44,12 @@ const PokemonDetails: React.FC<PokemonDetailsProps> = ({ id }) => {
 							name: data.name,
 							height: data.height,
 							weight: data.weight,
-							types: data.types.map((type: any) => (type.type.name)),
 							base_experience: data.base_experience,
+							types: data.types.map((type: any) => (type.type.name)),
 							abilities: data.abilities.map((ability: any) => (ability.ability.name)),
 							moves: data.moves.map((move: any) => (move.move.name)),
 						}
 						setPokemon(currentPokemon);
-						console.log("Data", data);
 					})
 					.catch((err) => {
 						console.error(err);
@@ -95,6 +94,7 @@ const PokemonDetails: React.FC<PokemonDetailsProps> = ({ id }) => {
 								</div>
 							);
 						})}
+
 					</div>
 				</div>
 
