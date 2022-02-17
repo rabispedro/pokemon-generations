@@ -7,15 +7,15 @@ interface PokemonDetailsProps {
 }
 
 interface pokemonInfo {
+	sprites: string;
 	id: number;
 	name: string;
-	base_experience: number;
 	height: number;
 	weight: number;
+	base_experience: number;
+	types: string[];
 	abilities: string[];
 	moves: string[];
-	types: string[];
-	sprites: string;
 }
 
 const PokemonDetails: React.FC<PokemonDetailsProps> = ({ id }) => {
@@ -28,9 +28,9 @@ const PokemonDetails: React.FC<PokemonDetailsProps> = ({ id }) => {
 		height: 0,
 		weight: 0,
 		base_experience: 0,
+		types: [],
 		abilities: [],
-		moves: [],
-		types: []
+		moves: []
 	};
 
 	const [pokemon, setPokemon] = useState(initialPokemon);
@@ -39,15 +39,15 @@ const PokemonDetails: React.FC<PokemonDetailsProps> = ({ id }) => {
 				await Api.get(url + id)
 					.then(({ data }) => {
 						const currentPokemon: pokemonInfo = {
+							sprites: data.sprites.versions['generation-v']['black-white'].animated.front_default || data.sprites.front_default,
 							id: data.id,
 							name: data.name,
-							base_experience: data.base_experience,
 							height: data.height,
 							weight: data.weight,
+							types: data.types.map((type: any) => (type.type.name)),
+							base_experience: data.base_experience,
 							abilities: data.abilities.map((ability: any) => (ability.ability.name)),
 							moves: data.moves.map((move: any) => (move.move.name)),
-							types: data.types.map((type: any) => (type.type.name)),
-							sprites: data.sprites.versions['generation-v']['black-white'].animated.front_default
 						}
 						setPokemon(currentPokemon);
 						console.log("Data", data);
@@ -85,6 +85,20 @@ const PokemonDetails: React.FC<PokemonDetailsProps> = ({ id }) => {
 				</div>
 
 				<div className='category-container'>
+					<h2>Types:</h2>
+					<div className='category-grid'>
+							
+						{pokemon.types.map(type => {
+							return (
+								<div className='pokemon-category-container'>
+									<p>{type}</p>
+								</div>
+							);
+						})}
+					</div>
+				</div>
+
+				<div className='category-container'>
 					<h2>Abilities:</h2>
 					<div className='category-grid'>
 
@@ -106,20 +120,6 @@ const PokemonDetails: React.FC<PokemonDetailsProps> = ({ id }) => {
 							return (
 								<div className='pokemon-category-container'>
 									<p>{move}</p>
-								</div>
-							);
-						})}
-					</div>
-				</div>
-
-				<div className='category-container'>
-					<h2>Types:</h2>
-					<div className='category-grid'>
-							
-						{pokemon.types.map(type => {
-							return (
-								<div className='pokemon-category-container'>
-									<p>{type}</p>
 								</div>
 							);
 						})}

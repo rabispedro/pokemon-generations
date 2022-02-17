@@ -1,4 +1,3 @@
-// import PokemonContext from 'contexts/PokemonContext';
 import Footer from 'components/Footer';
 import Header from 'components/Header';
 import PokemonDetails from 'components/PokemonDetails';
@@ -8,11 +7,7 @@ function App() {
 	return (
 		<>
 			<Header />
-			{/* <PokemonContext> */}
-
-			<PokemonDetails id='2'/>
-			
-			{/* </PokemonContext> */}
+			<PokemonDetails id='898'/>
 			<Footer />
 		</>
 	);
