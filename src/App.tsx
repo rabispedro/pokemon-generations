@@ -7,7 +7,8 @@ function App() {
 	return (
 		<>
 			<Header />
-			<PokemonDetails />
+
+			<PokemonDetails id='57'/>
 			<Footer />
 		</>
 	);
