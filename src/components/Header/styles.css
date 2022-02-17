@@ -1,34 +1,46 @@
 header {
-	width: 100%;
-	height: 6rem;
+  width: 100%;
+  height: 6rem;
 
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .upperBackground {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background-color: var(--red);
-	width: 100%;
-	height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--red);
+  width: 100%;
+  height: 4rem;
 
-
-	/* border: 3px solid var(--yellow); */
+  /* border: 3px solid var(--yellow); */
 }
 
 .lowerBackground {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background-color: var(--black);
-	
-	width: 100%;
-	height: 2rem;
-	
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  background-color: var(--black);
 
-	/* border: 3px solid var(--blue); */
+  width: 100%;
+  height: 2rem;
+
+  /* border: 3px solid var(--blue); */
+}
+
+#titulopagina {
+  position: flex;
+  right: 200px;
+  padding-right: 300px;
+  font-weight: bold;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  line-height: 42px;
+
+  color: var(--white);
+  text-shadow: 0px 4px 4px var(--black);
 }

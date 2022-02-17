@@ -1,0 +1,108 @@
+#card {
+  position: absolute;
+  width: 1200px;
+  height: 550px;
+  left: 360px;
+  top: 125px;
+
+  background: var(--grey);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+#cardItens {
+  display: inline-flex;
+}
+
+#background {
+  width: 300px;
+  height: 272px;
+
+  background: var(--white01);
+  border-radius: 10px 10px 0px 0px;
+}
+
+#treinar {
+  width: 300px;
+  height: 70px;
+  bottom: 0px;
+
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--white01);
+  font-size: 20px;
+  line-height: 47px;
+  display: inline;
+  align-items: center;
+  text-align: center;
+
+  background: var(--blue);
+  box-shadow: 0px 4px 4px var(--black);
+  border-radius: 0px 0px 10px 10px;
+}
+
+#treinar:hover {
+  background-color: var(--red);
+  color: var(--yellow);
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+#pokemonInfo {
+  padding-top: 60px;
+  margin-left: 120px;
+
+  position: flex;
+  align-items: left;
+  text-align: left;
+
+  color: var(--black);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+}
+
+#itens {
+  padding-top: 20px;
+  display: column;
+}
+
+#containerbarra {
+  width: 300px;
+  height: 8px;
+  background-color: var(--black);
+  border: 2px var(--black);
+}
+
+#barra {
+  width: 300px;
+  height: 8px;
+  background-color: var(--yellow);
+  animation-name: barra;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+#pokecard {
+  display: column;
+  justify-content: center;
+
+  padding-left: 90px;
+  padding-top: 40px;
+}
+p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  line-height: 47px;
+  color: #303c4a;
+}
+#tituloCard {
+  display: flex;
+}
+
+@keyframes barra {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}

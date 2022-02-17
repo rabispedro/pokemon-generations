@@ -6,7 +6,9 @@ const Header: React.FC = () => {
 		<>
 			<header>
 				<div className='upperBackground'></div>
-				<div className='lowerBackground'></div>
+				<div className='lowerBackground'>
+					<p id='titulopagina'>Treinar Pokémon</p>
+				</div>
 			</header>
 		</>
 	);
