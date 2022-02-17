@@ -5,8 +5,11 @@ import PokemonPicker from 'components/PokemonPicker';
 import SideNav from 'components/SideNav';
 import Card from 'components/Card';
 import './App.css';
+import { useState } from 'react';
 
 function App() {
+	const [pokemonId, setPokemonId] = useState('3')
+	
 	return (
 		<>
 			<Header />
