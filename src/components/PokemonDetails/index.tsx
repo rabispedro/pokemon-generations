@@ -6,93 +6,69 @@ interface PokemonDetailsProps {
 	id: string;
 }
 
-// interface pokemonInfo {
-// 	id: number;
-// 	name: string;
-// 	base_experience: number;
-// 	height: number;
-// 	weight: number;
-// 	abilities: pokemonAbilities[];
-// 	moves: pokemonMoves[];
-// 	types: pokemonTypes[];
-// 	sprites: string;
-// }
-
-// interface pokemonSprites {
-// 	versions: pokemonGames[];
-// }
-
-// interface pokemonGames {
-// 	generations: pokemonGameGeneration;
-// }
-
-// interface pokemonGameGeneration {
-// 	name: string;
-// }
-
-// interface pokemonGifs {
-// 	name: string;
-// }
-
-// interface pokemonAbilities {
-// 	ability: pokemonName;
-// }
-
-// interface pokemonMoves {
-// 	move: pokemonName;
-// }
-
-// interface pokemonTypes {
-// 	type: pokemonName;
-// }
-
-// interface pokemonName {
-// 	name: string;
-// }
+interface pokemonInfo {
+	id: number;
+	name: string;
+	base_experience: number;
+	height: number;
+	weight: number;
+	abilities: string[];
+	moves: string[];
+	types: string[];
+	sprites: string;
+}
 
 const PokemonDetails: React.FC<PokemonDetailsProps> = ({ id }) => {
 	const url = '/pokemon/';
-	const [currentPokemon, setCurrentPokemon] = useState({});
 
-	useEffect(() => {
-		(async () => {
-			
-			const poke = await fetchPokemon(id);
-			console.log("Poke: ", poke);
-		}) ()
-	}, []);
+	const initialPokemon: pokemonInfo = {
+		sprites: '',
+		id: 0,
+		name: '',
+		height: 0,
+		weight: 0,
+		base_experience: 0,
+		abilities: [],
+		moves: [],
+		types: []
+	};
 
-	let pokemon = {};
-	const fetchPokemon = async (id: string) => {
-		await Api.get(url + id)
-			.then((response: any) => {
-				console.log("Pokemon: ", response.data);
-				setCurrentPokemon(response.data);
-				console.log("CurrentPokemon: ", currentPokemon);
-				pokemon = response.data;
-				console.log("Pokemon definitivo: ", pokemon);
-				return response.data;
-			})
-			.catch((err: any) => {
-				console.error(err);
-			})
-			// return pokemon;
-	}
-
+	const [pokemon, setPokemon] = useState(initialPokemon);
+		useEffect(() => {
+			(async () => {
+				await Api.get(url + id)
+					.then(({ data }) => {
+						const currentPokemon: pokemonInfo = {
+							id: data.id,
+							name: data.name,
+							base_experience: data.base_experience,
+							height: data.height,
+							weight: data.weight,
+							abilities: data.abilities.map((ability: any) => (ability.ability.name)),
+							moves: data.moves.map((move: any) => (move.move.name)),
+							types: data.types.map((type: any) => (type.type.name)),
+							sprites: data.sprites.versions['generation-v']['black-white'].animated.front_default
+						}
+						setPokemon(currentPokemon);
+						console.log("Data", data);
+					})
+					.catch((err) => {
+						console.error(err);
+					});
+			}) ()
+		}, [id]);
+	
 	return (
 		<>
-			<div className='pokemon-details-container'>
-				<img src={currentPokemon.sprites.versions['generation-v']['black-white'].animated.front_default} alt={`${pokemon.name}`} />
-				<h2>{currentPokemon.name}</h2>
+			<div className='pokemon-details-container' >
 
-				
-				{/* <img src={pokemon.sprites.versions['generation-v']['black-white'].animated.front_default} alt={`${pokemon.name}`} />
+				<img src={pokemon.sprites} alt={`${pokemon.name}`} />
 
 				<div className='pokemon-info-container'>
 					<p>#{pokemon.id}</p>
 					<h2>{pokemon.name}</h2>
 				</div>
-
+				
 				<div className='pokemon-info-container'>
 					<h2>Height:</h2>
 					<p>{pokemon.height / 10}m</p>
@@ -107,15 +83,15 @@ const PokemonDetails: React.FC<PokemonDetailsProps> = ({ id }) => {
 					<h2>Base XP:</h2>
 					<p>{pokemon.base_experience}</p>
 				</div>
-			
+
 				<div className='category-container'>
 					<h2>Abilities:</h2>
 					<div className='category-grid'>
 
-						{pokemon.abilities?.map(ability => {
+						{pokemon.abilities.map(ability => {
 							return (
 								<div className='pokemon-category-container'>
-									<p>{ability.ability.name}</p>
+									<p>{ability}</p>
 								</div>
 							);
 						})}
@@ -129,7 +105,7 @@ const PokemonDetails: React.FC<PokemonDetailsProps> = ({ id }) => {
 						{pokemon.moves.map(move => {
 							return (
 								<div className='pokemon-category-container'>
-									<p>{move.move.name}</p>
+									<p>{move}</p>
 								</div>
 							);
 						})}
@@ -143,12 +119,12 @@ const PokemonDetails: React.FC<PokemonDetailsProps> = ({ id }) => {
 						{pokemon.types.map(type => {
 							return (
 								<div className='pokemon-category-container'>
-									<p>{type.type.name}</p>
+									<p>{type}</p>
 								</div>
 							);
 						})}
 					</div>
-				</div> */}
+				</div>
 
 			</div>
 		</>
