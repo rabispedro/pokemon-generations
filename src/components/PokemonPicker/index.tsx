@@ -24,82 +24,82 @@ const PokemonPicker: React.FC<PokemonPickerProps> = ({ setPokemon }) => {
 				sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/3.gif'
 			},
 			{
-				id: '1',
+				id: '2',
 				name: 'poke1',
 				sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/3.gif'
 			},
 			{
-				id: '1',
+				id: '3',
 				name: 'poke1',
 				sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/3.gif'
 			},
 			{
-				id: '1',
+				id: '4',
 				name: 'poke1',
 				sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/3.gif'
 			},
 			{
-				id: '1',
+				id: '5',
 				name: 'poke1',
 				sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/3.gif'
 			},
 			{
-				id: '1',
+				id: '6',
 				name: 'poke1',
 				sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/3.gif'
 			},
 			{
-				id: '1',
+				id: '7',
 				name: 'poke1',
 				sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/3.gif'
 			},
 			{
-				id: '1',
+				id: '8',
 				name: 'poke1',
 				sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/3.gif'
 			},
 			{
-				id: '1',
+				id: '9',
 				name: 'poke1',
 				sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/3.gif'
 			},
 			{
-				id: '1',
+				id: '10',
 				name: 'poke1',
 				sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/3.gif'
 			},
 			{
-				id: '1',
+				id: '11',
 				name: 'poke1',
 				sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/3.gif'
 			},
 			{
-				id: '1',
+				id: '12',
 				name: 'poke1',
 				sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/3.gif'
 			},
 			{
-				id: '1',
+				id: '13',
 				name: 'poke1',
 				sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/3.gif'
 			},
 			{
-				id: '1',
+				id: '14',
 				name: 'poke1',
 				sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/3.gif'
 			},
 			{
-				id: '1',
+				id: '15',
 				name: 'poke1',
 				sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/3.gif'
 			},
 			{
-				id: '1',
+				id: '16',
 				name: 'poke1',
 				sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/3.gif'
 			},
 			{
-				id: '1',
+				id: '17',
 				name: 'poke1',
 				sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/3.gif'
 			},
@@ -123,7 +123,10 @@ const PokemonPicker: React.FC<PokemonPickerProps> = ({ setPokemon }) => {
 
 						{pokemons.pokemon.map(poke => {
 							return (
-								<div className='pokemon-icon'>
+								<div
+									className='pokemon-icon'
+									onClick={() => {setPokemon(poke.id)}}
+								>
 									<img src={poke.sprite} alt={poke.name} />
 								</div>
 							);

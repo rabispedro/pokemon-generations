@@ -129,6 +129,7 @@
 }
 
 .pokemon-icon:hover img {
+	cursor: pointer;
 	filter: grayscale(0%);
 }
 
