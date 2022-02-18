@@ -5,10 +5,7 @@ const Header: React.FC = () => {
 	return (
 		<>
 			<header>
-				<div className='upperBackground'></div>
-				<div className='lowerBackground'>
-					<p id='titulopagina'>Treinar Pokémon</p>
-				</div>
+				<div className='background'></div>
 			</header>
 		</>
 	);

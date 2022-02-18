@@ -51,8 +51,8 @@ const PokemonDetails: React.FC<PokemonDetailsProps> = ({ id }) => {
 						}
 						setPokemon(currentPokemon);
 					})
-					.catch((err) => {
-						console.error(err);
+					.catch((error) => {
+						console.error(error);
 					});
 			}) ()
 		}, [id]);
