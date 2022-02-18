@@ -1,3 +1,4 @@
+import Logo from 'assets/logo.svg';
 import './styles.css';
 
 const Header: React.FC = () => {
@@ -5,7 +6,8 @@ const Header: React.FC = () => {
 	return (
 		<>
 			<header>
-				<div className='background'></div>
+				<img src={Logo} alt='Pokemon logo' />
+				<div className='background' />
 			</header>
 		</>
 	);

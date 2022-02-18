@@ -22,7 +22,8 @@
 }
 
 .growth-container img {
-	min-width: 30%;
+	min-width: 35%;
+	/* min-width: 35%; */
 }
 
 .growth-container h2 {

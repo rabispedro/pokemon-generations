@@ -5,11 +5,16 @@ header {
   display: flex;
   flex-direction: column;
 
-
   justify-content: flex-end;
   align-items: center;
 	
   background-color: var(--red);
+}
+
+header img {
+	width: 30%;
+	height: 60%;
+	margin: 0.4rem 0;
 }
 
 .background {

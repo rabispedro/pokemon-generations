@@ -10,7 +10,7 @@ interface PokemonGrowthProps {
 
 const PokemonGrowth: React.FC<PokemonGrowthProps> = ({ id }) => {
 	const URL = 'https://pokeapi.co/api/v2/pokemon/'
-	const GROW_RATE = 5;
+	const GROW_RATE = 10;
 	
 	const [progress, setProgress] = useState(0);
 	const [pokemonGif, setPokemonGif] = useState('');

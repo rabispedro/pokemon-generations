@@ -1,0 +1,10 @@
+
+.pokemon-components-container {
+	display: flex;
+
+	justify-content: space-evenly;
+	align-items: flex-start;
+	/* background-color: var(--blue); */
+}
+
+

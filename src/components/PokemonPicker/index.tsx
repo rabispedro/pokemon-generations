@@ -103,6 +103,11 @@ const PokemonPicker: React.FC<PokemonPickerProps> = ({ setPokemon }) => {
 				name: 'poke1',
 				sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/3.gif'
 			},
+			{
+				id: '18',
+				name: 'poke1',
+				sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/3.gif'
+			},
 		]
 	};
 
