@@ -67,14 +67,40 @@
 
 .category-grid {
 	width: 90%;
-	display: grid;
 
+	min-height: 4rem;
+	max-height: 10rem;
+	
+	display: grid;
 	grid: auto-flow dense / 34% 33% 33%;
+
+	align-items: center;
+	justify-content: center;
+
+	overflow-x: hidden;
+	overflow-y: scroll;
+	scroll-behavior: smooth;
 }
 
+.category-grid::-webkit-scrollbar {
+	width: 0.6rem;
+}
+
+.category-grid::-webkit-scrollbar-track {
+	border-radius: 1rem;
+}
+
+.category-grid::-webkit-scrollbar-thumb {   
+	height: 30%;
+	border-radius: 1rem;
+	background-color: var(--black);
+	border: 2px solid var(--blue);
+	}
+
 .pokemon-category-container {
-	display: flex;
+	max-height: 80%;
 	min-width: 4rem;
+	display: flex;
 	margin: 0.2rem;
 	padding: 0.4rem;
 

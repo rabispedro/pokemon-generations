@@ -1,8 +1,11 @@
-import { ReactComponent as Arrow } from 'assets/arrow.svg';
+import Arrow from 'assets/arrow.svg';
 import './styles.css';
 
+interface PokemonPickerProps {
+	setPokemon: Function;
+}
+
 interface pokemonQuantity {
-	maxNumber: number;
 	pokemon: pokemonImage[]
 }
 
@@ -12,42 +15,125 @@ interface pokemonImage {
 	sprite: string;
 }
 
-const PokemonPicker: React.FC = () => {
-	const pokemon: pokemonQuantity = {
-		maxNumber: 1,
+const PokemonPicker: React.FC<PokemonPickerProps> = ({ setPokemon }) => {
+	const pokemons: pokemonQuantity = {
 		pokemon: [
 			{
 				id: '1',
 				name: 'poke1',
 				sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/3.gif'
-			}
+			},
+			{
+				id: '1',
+				name: 'poke1',
+				sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/3.gif'
+			},
+			{
+				id: '1',
+				name: 'poke1',
+				sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/3.gif'
+			},
+			{
+				id: '1',
+				name: 'poke1',
+				sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/3.gif'
+			},
+			{
+				id: '1',
+				name: 'poke1',
+				sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/3.gif'
+			},
+			{
+				id: '1',
+				name: 'poke1',
+				sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/3.gif'
+			},
+			{
+				id: '1',
+				name: 'poke1',
+				sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/3.gif'
+			},
+			{
+				id: '1',
+				name: 'poke1',
+				sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/3.gif'
+			},
+			{
+				id: '1',
+				name: 'poke1',
+				sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/3.gif'
+			},
+			{
+				id: '1',
+				name: 'poke1',
+				sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/3.gif'
+			},
+			{
+				id: '1',
+				name: 'poke1',
+				sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/3.gif'
+			},
+			{
+				id: '1',
+				name: 'poke1',
+				sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/3.gif'
+			},
+			{
+				id: '1',
+				name: 'poke1',
+				sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/3.gif'
+			},
+			{
+				id: '1',
+				name: 'poke1',
+				sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/3.gif'
+			},
+			{
+				id: '1',
+				name: 'poke1',
+				sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/3.gif'
+			},
+			{
+				id: '1',
+				name: 'poke1',
+				sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/3.gif'
+			},
+			{
+				id: '1',
+				name: 'poke1',
+				sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/3.gif'
+			},
 		]
 	};
 
-	console.log("LISTA DE POKEMONS:", pokemon);
+	console.log("LISTA DE POKEMONS:", pokemons);
 	
 	return (
 		<>
 			<div className='pokemon-generation'>
+
 				<div className='generation-title'>
-					<Arrow />
-					<h1>Generation</h1>
-					<Arrow className='flip-horizontal' />
+					<img src={Arrow} alt='previous item arrow' />
+					<h2>Generation</h2>
+					<img src={Arrow} className='flip-horizontal' alt='next item arrow' />
 				</div>
 
-				<div className='pokemon-container'>
-					<h2>qtd: {pokemon.maxNumber}</h2>
+				<div className='pokemon-icon-container'>
+					<div className='icon-grid'>
 
-					{pokemon.pokemon.map(poke => {
-						return (
-							<div className='pokemon-icon'>
-								<h3>{poke.id}</h3>
-								<h3>{poke.name}</h3>
-								<img src={poke.sprite} alt={poke.name} />
-							</div>
-						);
-					})}
+						{pokemons.pokemon.map(poke => {
+							return (
+								<div className='pokemon-icon'>
+									<img src={poke.sprite} alt={poke.name} />
+								</div>
+							);
+						})}
+					</div>
 				</div>
+
+				{/* <div className='pokemon-quantity'>
+					<h2>qtd: {pokemons.pokemon.length}</h2>
+				</div> */}
 
 			</div>
 		</>
