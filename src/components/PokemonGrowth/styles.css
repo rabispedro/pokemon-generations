@@ -22,8 +22,12 @@
 	background-color: var(--black);
 }
 
+.growth-container img {
+	min-width: 30%;
+}
+
 .growth-container h2 {
-	font-size: 14px;
+	font-size: 18px;
 	font-weight: 600;
 }
 

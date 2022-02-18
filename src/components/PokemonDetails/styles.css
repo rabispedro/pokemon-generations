@@ -87,6 +87,11 @@
 	border: 2px solid var(--yellow)
 }
 
+.pokemon-category-container:hover {
+	cursor: pointer;
+	border: 2px solid var(--blue);
+}
+
 .pokemon-category-container p {
 	font-style: italic;
 	font-size: 12px;

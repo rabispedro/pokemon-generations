@@ -9,7 +9,7 @@ import { useState } from 'react';
 import PokemonGrowth from 'components/PokemonGrowth';
 
 function App() {
-	const [pokemonId, setPokemonId] = useState('10');
+	const [pokemonId, setPokemonId] = useState('158');
 	const [pokemonIds, setPokemonIds] = useState(['1', '2', '3']);
 	
 	return (
