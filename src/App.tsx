@@ -8,7 +8,6 @@ import './App.css';
 
 function App() {
 	const [pokemonId, setPokemonId] = useState('1');
-	const [pokemonIds, setPokemonIds] = useState(['1', '2', '3']);
 	
 	return (
 		<>

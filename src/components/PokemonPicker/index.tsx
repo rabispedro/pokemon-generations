@@ -1,6 +1,4 @@
 import Arrow from 'assets/arrow.svg';
-import Api from 'services/Api';
-import { useEffect, useState } from 'react';
 import './styles.css';
 
 interface PokemonPickerProps {
